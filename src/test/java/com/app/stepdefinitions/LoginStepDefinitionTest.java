@@ -51,59 +51,45 @@ public class LoginStepDefinitionTest {
 	}
 	
 	@Then("the user should be redirected to the MyAccount Page by passing email and password with excel row {string}")
-    public void check_user_navigates_to_my_account_page_by_passing_email_and_password_with_excel_data(String rows)
-    {
-        datamap=DataReader.data(System.getProperty("user.dir")+"\\testdata\\Opencart_LoginData.xlsx", "Sheet1");
+	public void check_user_navigates_to_my_account_page_by_passing_email_and_password_with_excel_data(String rows) {
+		datamap = DataReader.data(System.getProperty("user.dir") + "\\testdata\\Opencart_LoginData.xlsx", "Sheet1");
 
-        int index=Integer.parseInt(rows)-1;
-        String email= datamap.get(index).get("username");
-        String pwd= datamap.get(index).get("password");
-        String exp_res= datamap.get(index).get("res");
+		int index = Integer.parseInt(rows) - 1;
+		String email = datamap.get(index).get("username");
+		String pwd = datamap.get(index).get("password");
+		String exp_res = datamap.get(index).get("res");
 
-        lp=new LoginPage(BaseClass.getDriver());
-        lp.setEmail(email);
-        lp.setPassword(pwd);
+		lp = new LoginPage(BaseClass.getDriver());
+		lp.setEmail(email);
+		lp.setPassword(pwd);
 
-        lp.clickLogin();
-        map=new MyAccountPage(BaseClass.getDriver());
-        try
-        {
-            boolean targetpage=map.checkMessage();
-            System.out.println("target page: "+ targetpage);
-            if(exp_res.equals("Valid"))
-            {
-                if(targetpage==true)
-                {
-                    MyAccountPage myaccpage=new MyAccountPage(BaseClass.getDriver());
-                    map.clickOnLogout();
-                    Assert.assertTrue(true);
-                }
-                else
-                {
-                    Assert.assertTrue(false);
-                }
-            }
+		lp.clickLogin();
+		map = new MyAccountPage(BaseClass.getDriver());
+		try {
+			boolean targetpage = map.checkMessage();
+			System.out.println("target page: " + targetpage);
+			if (exp_res.equals("Valid")) {
+				if (targetpage == true) {
+					MyAccountPage myaccpage = new MyAccountPage(BaseClass.getDriver());
+					map.clickOnLogout();
+					Assert.assertTrue(true);
+				} else {
+					Assert.assertTrue(false);
+				}
+			}
 
-            if(exp_res.equals("Invalid"))
-            {
-                if(targetpage==true)
-                {
-                	map.clickOnLogout();
-                    Assert.assertTrue(false);
-                }
-                else
-                {
-                    Assert.assertTrue(true);
-                }
-            }
+			if (exp_res.equals("Invalid")) {
+				if (targetpage == true) {
+					map.clickOnLogout();
+					Assert.assertTrue(false);
+				} else {
+					Assert.assertTrue(true);
+				}
+			}
 
+		} catch (Exception e) {
 
-        }
-        catch(Exception e)
-        {
-
-            Assert.assertTrue(false);
-        }
-      }
-	
+			Assert.assertTrue(false);
+		}
+	}
 }

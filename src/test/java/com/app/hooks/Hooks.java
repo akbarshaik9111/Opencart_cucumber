@@ -32,7 +32,6 @@ public class Hooks {
 		driver.quit();
 	}
 	
-	
 	@AfterStep
 	public void addScreenshot(Scenario scenario) {
 		if(scenario.isFailed()) {
