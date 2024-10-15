@@ -30,4 +30,12 @@ public class HomePage extends BasePage {
 	public void clickOnLogin() {
 		link_login.click();
 	}
+	
+	public String getTitle() {
+		return driver.getTitle();	
+	}
+	
+	public String getCurrentURL() {
+		return driver.getCurrentUrl();
+	}
 }

@@ -92,4 +92,12 @@ public class LoginStepDefinitionTest {
 			Assert.assertTrue(false);
 		}
 	}
+	
+	@Given("user enters valid email as {string} and password as {string}")
+	public void user_enters_valid_email_as_email_and_password_as_password(String email, String password) {
+		lp = new LoginPage(BaseClass.getDriver());
+		lp.setEmail(email);
+		lp.setPassword(password);
+		lp.clickLogin();
+	}
 }

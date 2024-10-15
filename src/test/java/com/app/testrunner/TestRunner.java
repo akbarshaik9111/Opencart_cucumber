@@ -20,5 +20,12 @@ import io.cucumber.junit.CucumberOptions;
 		//tags = "@sanity or @regression"
 		)
 public class TestRunner {
+	
+	/*
+	@Override
+	@DataProvider(parallel = false)
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}*/
 
 }
