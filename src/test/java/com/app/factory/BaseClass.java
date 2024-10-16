@@ -27,7 +27,11 @@ public class BaseClass {
 		props = getProperties();
 		String executionEnv = props.getProperty("execution_env");
 		String os = props.getProperty("os").toLowerCase();
-		String browser = props.getProperty("browser").toLowerCase();
+		String browser_properties = props.getProperty("browser").toLowerCase();
+		// To control at runtime - while running command line
+		String browser_maven = System.getProperty("browser");
+		
+		String browser = browser_maven !=null ? browser_maven : browser_properties;
 		
 		if(executionEnv.equalsIgnoreCase("remote")) {
 			DesiredCapabilities capabilities = new DesiredCapabilities();

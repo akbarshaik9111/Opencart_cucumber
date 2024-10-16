@@ -2,6 +2,7 @@ package com.app.stepdefinitions;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ import com.app.pageobjects.LoginPage;
 import com.app.pageobjects.MyAccountPage;
 import com.app.utilities.DataReader;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -100,4 +102,16 @@ public class LoginStepDefinitionTest {
 		lp.setPassword(password);
 		lp.clickLogin();
 	}
+	
+	@When("user enters the following credentials:")
+	public void user_enters_the_following_credentials(DataTable datatable) {
+		List<Map<String, String>> map = datatable.asMaps(String.class, String.class);
+		
+		String email = map.get(0).get("email");
+		String password = map.get(0).get("password");
+		lp = new LoginPage(BaseClass.getDriver());
+		lp.setEmail(email);
+		lp.setPassword(password);
+	}
+	
 }

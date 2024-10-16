@@ -27,7 +27,8 @@ public class MyAccountPageStepDefinitionTest {
 	}
 	
 	@Then("go to the wishlist page")
-	public void go_to_the_wishlist_page() {
+	public void go_to_the_wishlist_page() throws InterruptedException {
+		Thread.sleep(1000);
 		macc.goToWishList();
 	}
 }

@@ -1,5 +1,6 @@
 Feature: User should search the product and added to wishlist
 
+@regressiontest
 Scenario: Successfully product added to wish list
 	Given the user navigates to login page
 	And user enters valid email as "akbarshaik911@gmail.com" and password as "Akbar@0326"

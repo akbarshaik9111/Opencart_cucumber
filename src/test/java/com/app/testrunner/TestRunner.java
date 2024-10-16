@@ -17,11 +17,18 @@ import io.cucumber.junit.CucumberOptions;
 			"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true,
 		publish = true
-		//tags = "@sanity or @regression"
+		//tags = "@sanitytest"
+		//tags = "@regressiontest"
+		//tags = "@sanitytest or @regressiontest"
 		)
 public class TestRunner {
 	
 	/*
+	 * For TestNG
+	 * i. We have to comment @RunWith(Cucumber.class)
+	 * ii. We have to extend this class to AbstractTestNGCucumberTests
+	 * iii. Have to add cucumber-testng dependency
+	 * iv. Have to update the imports from org.junit to org.testng
 	@Override
 	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
