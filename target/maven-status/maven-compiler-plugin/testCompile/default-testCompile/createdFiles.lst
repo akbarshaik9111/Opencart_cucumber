@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\app\stepdefinitions\DashboardStepDefinitionTest.class
 com\app\pageobjects\MyAccountPage.class
 com\app\stepdefinitions\WishListStepDefinition.class
@@ -14,3 +15,5 @@ com\app\pageobjects\LoginPage.class
 com\app\utilities\DataReader$1.class
 com\app\pageobjects\BasePage.class
 com\app\stepdefinitions\LoginStepDefinitionTest.class
+=======
+>>>>>>> cc7c7755b2c8af786cf6cb0ac69e05829896a43e
