@@ -1,1 +1,16 @@
+com\app\stepdefinitions\DashboardStepDefinitionTest.class
+com\app\pageobjects\MyAccountPage.class
+com\app\stepdefinitions\WishListStepDefinition.class
+com\app\pageobjects\WishListPage.class
+com\app\hooks\Hooks.class
+com\app\factory\BaseClass.class
+com\app\utilities\DataReader.class
+com\app\stepdefinitions\RegistrationStepDefinitionTest.class
+com\app\pageobjects\AccountRegistrationPage.class
+com\app\testrunner\TestRunner.class
+com\app\stepdefinitions\MyAccountPageStepDefinitionTest.class
+com\app\pageobjects\HomePage.class
+com\app\pageobjects\LoginPage.class
 com\app\utilities\DataReader$1.class
+com\app\pageobjects\BasePage.class
+com\app\stepdefinitions\LoginStepDefinitionTest.class

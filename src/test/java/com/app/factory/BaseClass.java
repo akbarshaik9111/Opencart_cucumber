@@ -7,8 +7,6 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +19,6 @@ public class BaseClass {
 	
 	public static WebDriver driver;
 	public static Properties props;
-	public static Logger logger;
 	
 	public static WebDriver initializeBrowser() throws IOException {
 		props = getProperties();
@@ -100,11 +97,6 @@ public class BaseClass {
 		props = new Properties();
 		props.load(file);
 		return props;
-	}
-	
-	public static Logger getLogger() {
-		logger = LogManager.getLogger();
-		return logger;
 	}
 	
 	public static String randomString() {
