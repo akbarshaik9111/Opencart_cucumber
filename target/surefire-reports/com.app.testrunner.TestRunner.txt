@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: com.app.testrunner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.68 s -- in com.app.testrunner.TestRunner
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 30.05 s <<< FAILURE! -- in com.app.testrunner.TestRunner
+Login with valid credentials.Login Data Driven #2 -- Time elapsed: 10.13 s <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.app.stepdefinitions.LoginStepDefinitionTest.the_user_should_be_redirected_to_the_MyAccount_page(LoginStepDefinitionTest.java:52)
+	at ✽.the user should be redirected to the MyAccount page(file:///D:/work_space/cucumber/Opencart_Cucumber/./src/test/java/com/app/features/Login.feature:24)
+
